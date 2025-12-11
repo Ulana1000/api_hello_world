@@ -28,4 +28,4 @@ async def get_random_quote() -> dict[str, str]:
     " u ",
     " e "
     ]
-return {"quote": random.choice(quotes)}
+    return {"quote": random.choice(quotes)}
