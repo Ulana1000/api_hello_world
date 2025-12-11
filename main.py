@@ -22,10 +22,10 @@ async def read_index() -> str:
 
 @app.get("/random_quote")
 async def get_random_quote() -> dict[str, str]:
-quotes = [
-" a ",
-" i ",
-" u ",
-" e "
-]
+    quotes = [
+    " a ",
+    " i ",
+    " u ",
+    " e "
+    ]
 return {"quote": random.choice(quotes)}
