@@ -20,5 +20,8 @@ async def read_index() -> str:
 
 
 @app.get("/hello_world")
-async def read_root() -> dict[str, str]:
-    return {"message": "ハローワールド"}
+async def get_current_time() -> dict[str, str]:
+    return {
+"current_time": now.strftime("%Y-%m-%d %H:%M:%S"),
+"timezone": "Asia/Tokyo"
+}
