@@ -17,11 +17,11 @@ async def read_index() -> str:
       </body>
     </html>
     """
-from datetime import datetime
 
-@app.get("/greet/{name}")
-async def greet_user(name: str) -> dict[str, str]:
-    return {
-"message": f" {name} ",
-"timestamp": datetime.now().strftime("%H:%M:%S")
+
+@app.get("/double/{number}")
+async def double_number(number: int) -> dict[str, int]:
+return {
+"input": number,
+"result": number * 2
 }
