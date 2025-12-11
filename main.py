@@ -18,9 +18,14 @@ async def read_index() -> str:
     </html>
     """
 
-@app.get("/double/{number}")
-async def double_number(number: int) -> dict[str, int]:
-return {
-"input": number,
-"result": number * 2
-}
+
+import random
+@app.get("/random_quote")
+async def get_random_quote() -> dict[str, str]:
+quotes = [
+" ",
+" ",
+" ",
+" "
+]
+return {"quote": random.choice(quotes)}
