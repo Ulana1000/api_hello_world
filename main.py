@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-import random
+from datetime import datetime
 app = FastAPI()
 
 
@@ -20,12 +20,9 @@ async def read_index() -> str:
 
 
 
-@app.get("/random_quote")
-async def get_random_quote() -> dict[str, str]:
-quotes = [
-"ま",
-"み",
-"む",
-"め"
-]
-return {"quote": random.choice(quotes)}
+@app.get("/greet/{name}")
+async def greet_user(name: str) -> dict[str, str]:
+return {
+"message": f" {name} ",
+"timestamp": datetime.now().strftime("%H:%M:%S")
+}
