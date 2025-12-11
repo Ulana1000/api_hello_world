@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-
+import random
 app = FastAPI()
 
 
@@ -19,7 +19,7 @@ async def read_index() -> str:
     """
 
 
-import random
+
 @app.get("/random_quote")
 async def get_random_quote() -> dict[str, str]:
 quotes = [
