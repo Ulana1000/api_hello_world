@@ -18,7 +18,6 @@ async def read_index() -> str:
     </html>
     """
 
-
 @app.get("/double/{number}")
 async def double_number(number: int) -> dict[str, int]:
 return {
